@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/HalleyInteractive/dht22-node-js#readme",
   "dependencies": {
+    "node-dht-sensor": "0.0.26",
     "request": "^2.75.0"
   }
 }
