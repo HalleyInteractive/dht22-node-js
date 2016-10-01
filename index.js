@@ -13,9 +13,13 @@
       temperature: reading.temperature,
       humidity: reading.humidity
     };
-    request.put(`${HOST}/nodes/${NODE_ID}/reading`)
-    .send(body)
-    .end(() => {
+    request.put({
+      url: `${HOST}/nodes/${NODE_ID}/reading`,
+      json: body},
+      (error) => {
+        if(error) {
+          console.log('Error: ', error);
+        }
       console.log('Send reading to host');
     });
   }, READING_INTERVAL);
