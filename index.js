@@ -8,10 +8,10 @@
   const NODE_ID = 'rpi_hub';
 
   setInterval(() => {
-    let reading = dht22.read();
+    dht22.read();
     let body = {
-      temperature: reading.temperature,
-      humidity: reading.humidity
+      temperature: dht22.temperature(),
+      humidity: dht22.humidity()
     };
     request.put({
       url: `${HOST}/nodes/${NODE_ID}/reading`,
