@@ -3,7 +3,7 @@
 
   const dht22 = require('./dht22.js');
   const request = require('request');
-  const READING_INTERVAL = 1000;
+  const READING_INTERVAL = 1000 * 60 * 10; // 10 minutes
   const HOST = 'http://localhost:3000';
   const NODE_ID = 'rpi_hub';
 
