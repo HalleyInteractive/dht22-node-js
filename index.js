@@ -25,3 +25,7 @@
   }, READING_INTERVAL);
 
 }());
+
+// TODO: Read from config, if no config ask user input
+// TODO: Check if node exists, create node first at host
+// TODO: Check if current reading is the same as the last.
