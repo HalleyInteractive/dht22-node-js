@@ -24,19 +24,28 @@
     }
 
     temperature() {
-      return this.roundHalf(readout.temperature);
+      return this.roundToOneDecimal(readout.temperature);
     }
 
     humidity() {
-      return this.roundHalf(readout.humidity);
+      return this.roundToOneDecimal(readout.humidity);
     }
 
     readout() {
       let tmpReadout = {
-        temperature: this.roundHalf(readout.temperature),
-        humidity: this.roundHalf(readout.humidity),
+        temperature: this.roundToOneDecimal(readout.temperature),
+        humidity: this.roundToOneDecimal(readout.humidity),
       };
       return tmpReadout;
+    }
+
+    /**
+    * Rounds a float to a single decimal place.
+    * @param number {number} Number to round.
+    * @return number {number} Rounded number.
+    */
+    roundToOneDecimal(number) {
+      return Number(Math.round(number+'e2')+'e-2');
     }
 
     /**
